@@ -1,0 +1,28 @@
+class Solution {
+    public ListNode reverseList(ListNode head) {
+        if(head == null || head.next == null){
+            return head ;
+        }
+
+        int i = 0 ;
+        for(ListNode p = head ; p != null ; p = p.next){
+            i++ ;
+        }
+
+        int[] array = new int[i] ;
+
+        ListNode q = head ;
+        for(int j = 0 ; j < array.length ; j++){
+            array[j] = q.val ;
+            q = q.next ;
+        }
+
+        ListNode h = head ;
+        for(int k = array.length - 1  ; k >= 0 ; k--){
+            h.val = array[k] ;
+            h = h.next;
+        }
+
+        return head ;
+    }
+}
